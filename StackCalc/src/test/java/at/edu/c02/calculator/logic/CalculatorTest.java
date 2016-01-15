@@ -6,9 +6,8 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import at.edu.c02.calculator.Calculator;
-import at.edu.c02.calculator.CalculatorException;
 import at.edu.c02.calculator.Calculator.Operation;
-import at.edu.c02.calculator.logic.CalculatorImpl;
+import at.edu.c02.calculator.CalculatorException;
 
 public class CalculatorTest {
 
@@ -71,6 +70,20 @@ public class CalculatorTest {
 			assertEquals("Division by zero", e.getMessage());
 			// e.getCause()
 		}
+
+	}
+	
+	@Test
+	public void testmodulo() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		
+			calc.push(5);
+			calc.push(3);
+			double result = calc.perform(Operation.mod);
+
+			assertEquals(2, result, 0);
+		
 
 	}
 }
